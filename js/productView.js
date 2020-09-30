@@ -20,7 +20,7 @@ function productShow2() {
             <div class="container-fluid p-0 pb-3">
                 <img class="img-fluid w-50" src="${productsLength <= 0 ? '' : product[productShownId || 0].images[model.productShowBox.currentImage]}"></img>
                 <div class="card border-light mb-3 float-right" >
-                    <div class="card-body  p-0">
+                    <div class="card-body p-0">
                         <h1 class="card-title">${productsLength <= 0 ? '' : product[productShownId || 0].price} kr</h1>
                         <input class="btn btn-primary float-right" type="button" value="${searchBasketProductIndex(productShownId || 0) === -1 ? 'Kjøp' : 'Legg til igjen'}" data-dismiss="modal" onclick="addProduct(${productShownId || 0})">
                     </div>
