@@ -17,10 +17,14 @@ function productShow2() {
 
         <!-- Modal body -->
         <div class="modal-body">
-            <div class="container-fluid p-0">
+            <div class="container-fluid p-0 pb-3">
                 <img class="img-fluid w-50" src="${productsLength <= 0 ? '' : product[productShownId || 0].images[model.productShowBox.currentImage]}"></img>
-                <p class="float-right">${productsLength <= 0 ? '' : product[productShownId || 0].price} kr</p>
-                <input class="btn btn-primary btn-sml btn-sm" style="clear:right;" type="button" value="${searchBasketProductIndex(productShownId || 0) === -1 ? 'Legg til i handlekurv' : 'Legg til igjen'}" data-dismiss="modal" onclick="addProduct(${productShownId || 0})">
+                <div class="card border-light mb-3 float-right" >
+                    <div class="card-body  p-0">
+                        <h1 class="card-title">${productsLength <= 0 ? '' : product[productShownId || 0].price} kr</h1>
+                        <input class="btn btn-primary float-right" type="button" value="${searchBasketProductIndex(productShownId || 0) === -1 ? 'Kjøp' : 'Legg til igjen'}" data-dismiss="modal" onclick="addProduct(${productShownId || 0})">
+                    </div>
+                </div> 
             </div>
             <div class="pt-3" role="tabpanel">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
