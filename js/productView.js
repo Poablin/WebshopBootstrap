@@ -18,7 +18,7 @@ function productShow2() {
         <!-- Modal body -->
         <div class="modal-body">
             <div class="container-fluid p-0">
-                <img class="img-fluid" style="max-width:400px" src="${productsLength <= 0 ? '' : product[productShownId || 0].images[model.productShowBox.currentImage]}"></img>
+                <img class="img-fluid w-50" src="${productsLength <= 0 ? '' : product[productShownId || 0].images[model.productShowBox.currentImage]}"></img>
                 <p class="float-right">${productsLength <= 0 ? '' : product[productShownId || 0].price} kr</p>
             </div>
         </div>
