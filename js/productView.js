@@ -20,30 +20,38 @@ function productShow2() {
             <div class="container-fluid p-0">
                 <img class="img-fluid w-50" src="${productsLength <= 0 ? '' : product[productShownId || 0].images[model.productShowBox.currentImage]}"></img>
                 <p class="float-right">${productsLength <= 0 ? '' : product[productShownId || 0].price} kr</p>
+                <input class="btn btn-primary btn-sml btn-sm" style="clear:right;" type="button" value="${searchBasketProductIndex(productShownId || 0) === -1 ? 'Legg til i handlekurv' : 'Legg til igjen'}" data-dismiss="modal" onclick="addProduct(${productShownId || 0})">
             </div>
-            <div role="tabpanel">
+            <div class="pt-3" role="tabpanel">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Innhold</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Næringsinnhold</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Næring</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Alternativer</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <p>${productsLength <= 0 ? '' : product[productShownId || 0].productInfo}</p> 
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        ${showContents()}
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <p>Her skal bli alts</p>
+                    </div>
                 </div>
             </div>
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fortsett å handle</button>
+          ${model.shoppingBasket.products.length <= 0 ? '' : '<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" onclick="showB()">Gå til handlekurv</button>'}
         </div>
   
       </div>
