@@ -64,7 +64,7 @@ function listBasketProducts() {
         html += `
         <li>
             <div class="frame">
-                <img onclick="selectProduct(${model.shoppingBasket.products[i].id})" src="${model.products[model.shoppingBasket.products[i].id].images[0]}">
+                <img width="200" height="100" onclick="selectProduct(${model.shoppingBasket.products[i].id})" src="${model.products[model.shoppingBasket.products[i].id].images[0]}">
             </div>
             <div class="infoText">
                 <div class="itemName">
