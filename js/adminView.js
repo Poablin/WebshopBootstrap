@@ -22,10 +22,52 @@ function showAdmin() {
       </ul>
     </div>
     </nav>
-    ${adminShowProductsDiv()}
-    ${adminShowProductsList()}
-    ${adminShowUsersDiv()}
-    ${adminShowUsersList()}
+    
+    <div id="mainContent">
+    <div class="products">
+        ${adminShowProductsDiv()}
+
+        <div class="showproducts">
+            <ul>
+            ${adminShowProductsList()}
+            </ul>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div>
+            <h3>Stats</h3>
+        </div>
+        <div class="showchart">
+            <canvas id="myChart"></canvas>
+            <br>
+        </div>
+        <div class="showpgraph">
+        </div>
+    </div>
+    
+    <div class="users">
+        ${adminShowUsersDiv()}
+    </div>
+        <div class="showusers">
+            <ul>
+            ${adminShowUsersList()}
+            </ul>
+        </div>
+
+        <div class="showUsersOrders" ${adminInputs.userIsEditing === false ? 'style="display: none"' : ''}>
+            <ul>
+                ${adminShowOrderHistory()}
+            </ul>
+        </div>
+    </div>
+
+    ${showMobileMenu()} 
+
+<div id="footerContentNoScroll">
+    <a href="#" class="footer-text">LUNCHPOWER</a>
+</div>
+</div>
     `;
 
     showChart();

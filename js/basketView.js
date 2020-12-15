@@ -80,9 +80,9 @@ function listBasketProducts() {
                     ${model.shoppingBasket.products[i].priceTotal} kr
                 </div>
             <div class="basketButtons">
-                <i class="fas fa-plus-square" onclick="changeProductAmount(true, ${model.shoppingBasket.products[i].id})"></i>
+                <button  onclick="changeProductAmount(true, ${model.shoppingBasket.products[i].id})">+</button>
                 <input type="text" value="${model.shoppingBasket.products[i].amount}" onchange="changeProductAmount2(this.value, ${model.shoppingBasket.products[i].id})"></input>
-                <i class="fas fa-minus-square" onclick="changeProductAmount(false, ${model.shoppingBasket.products[i].id})"></i>
+                <button onclick="changeProductAmount(false, ${model.shoppingBasket.products[i].id})">-</button>
                 <button onclick="removeProduct(${model.shoppingBasket.products[i].id})">Fjern</button>
             </div>
         </li>

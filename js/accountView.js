@@ -21,7 +21,21 @@ function showAccount() {
   </ul>
 </div>
 </nav>
-${showOrderHistory()}
+
+<div id="mainContent">
+        <div class="optionsListDiv" id="optionsListDiv">
+            <ul id="optionsList">
+                <button onclick="showOrderHistory()">Dine Bestillinger</button>
+                <button onclick="showContactInformation()">Kontakt Informasjon</button>
+                <button onclick="showPaymentMethods()">Lagrede Betalings Metoder</button>
+                <button onclick="showChangePassword()">Endre Passord</button>
+                <button onclick="logout()">Logg ut</button>
+            </ul>
+        </div>
+
+        <div id="accountBox"></div>
+
+</div>
 `
     showOrderHistory()
 }
@@ -48,8 +62,7 @@ function showOrderHistory() {
     </div>
     `;
 
-    // document.getElementById('accountBox').innerHTML = html
-    return html
+    document.getElementById('accountBox').innerHTML = html
 }
 
 function getOrderList(id) {
