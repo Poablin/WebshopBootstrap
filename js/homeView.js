@@ -9,6 +9,9 @@ function showHome() {
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
+        <a class="nav-link" href="javascript:showA()">HOME</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="javascript:showB()">CART(${model.shoppingBasket.products.length})</a>
         </li>
         <li class="nav-item">

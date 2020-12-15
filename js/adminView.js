@@ -1,8 +1,33 @@
 function showAdmin() {
     const adminInputs = model.inputs.admin;
     appDiv.innerHTML = `
-
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <a class="navbar-brand" href="javascript:showA()">LUNCHPOWER</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="javascript:showA()">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:showB()">CART(${model.shoppingBasket.products.length})</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="javascript:showD()">HOW TO MAKE</a>
+      </li>
+        ${userVerify(true, false) === true ? '<li class="nav-item"><a class="nav-link" href="javascript:showF()">ACCOUNT</a></li>' : '<li class="nav-item"><a class="nav-link" href="javascript:showG()">LOGG INN</a></li>'}
+        ${userVerify(false, true) === true ? '<li class="nav-item"><a class="nav-link" href="javascript:showC()">ADMIN</a></li>' : ''}   
+      </ul>
+    </div>
+    </nav>
+    ${adminShowProductsDiv()}
+    ${adminShowProductsList()}
+    ${adminShowUsersDiv()}
+    ${adminShowUsersList()}
     `;
+
     showChart();
 }
 
